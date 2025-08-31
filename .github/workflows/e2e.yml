@@ -49,8 +49,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile=false
 
-      - name: Install Playwright browsers
-        uses: microsoft/playwright-github-action@v1
+      - name: Install Playwright browsers and system deps
+        run: pnpm --filter e2e exec playwright install --with-deps
 
       - name: Run e2e tests
         run: pnpm test:e2e
