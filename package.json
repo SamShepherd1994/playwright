@@ -8,7 +8,9 @@
     "typecheck": "pnpm -r typecheck",
     "lint": "echo 'no lint configured'",
     "test:e2e": "pnpm --filter e2e test",
-    "test:e2e:ui": "pnpm --filter e2e test:ui"
+    "test:e2e:ui": "pnpm --filter e2e test:ui",
+    "db:generate": "pnpm --filter api drizzle:generate",
+    "db:migrate": "pnpm --filter api drizzle:migrate"
   }
+  
 }
-

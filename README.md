@@ -16,7 +16,7 @@
 **Packages**
 - `apps/api`
   - Port `4000`. Routes: `GET /api/health`, `GET /api/items`, `POST /api/items`.
-  - Automatically runs a tiny migration creating `items` table if missing.
+  - Uses Drizzle ORM (PostgreSQL). On startup, runs SQL migrations from `apps/api/drizzle` via Drizzle migrator so the DB is ready for local and CI.
 - `apps/web`
   - Port `5173`. Vite dev proxy forwards `/api` to `http://localhost:4000`.
 - `apps/e2e`
@@ -39,6 +39,9 @@
 - `pnpm --filter web dev`: Run only the Web dev server.
 - `pnpm test:e2e`: Run Playwright headless tests.
 - `pnpm test:e2e:ui`: Run Playwright in UI mode.
+- `pnpm --filter api migrate`: Apply Drizzle SQL migrations manually.
+- `pnpm db:generate`: Generate SQL migrations from Drizzle schema (drizzle-kit).
+- `pnpm db:migrate`: Apply SQL migrations using drizzle-kit.
 
 **Notes**
 - Ensure Postgres is running before starting the API or e2e tests.
