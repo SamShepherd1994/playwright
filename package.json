@@ -1,0 +1,14 @@
+{
+  "name": "playwright-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.6.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "echo 'no lint configured'",
+    "test:e2e": "pnpm --filter e2e test",
+    "test:e2e:ui": "pnpm --filter e2e test:ui"
+  }
+}
+
